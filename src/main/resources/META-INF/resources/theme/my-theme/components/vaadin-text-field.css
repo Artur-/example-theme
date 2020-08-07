@@ -1,0 +1,7 @@
+[part="input-field"] {
+  border: 1px dashed black;
+}
+
+:host([class~="fancy"]) [part="input-field"] {
+  border: 3px solid blue;
+}

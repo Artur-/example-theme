@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("theme/my-theme/fonts/Roboto-BlackItalic.ttf") format("TrueType");
+}
+
+html {
+  --lumo-font-size: 40px;
+}
+
+body {
+  background: lightblue;
+  --lumo-font-family: "Roboto";
+
+  --vaadin-charts-color-0: rgb(255, 255, 0);
+  --vaadin-charts-color-1: rgb(224, 8, 188);
+  --vaadin-charts-color-2: rgb(26, 126, 126);
+}
