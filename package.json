@@ -48,16 +48,18 @@
     "lit-element": "^2.2.1"
   },
   "devDependencies": {
+    "change-case": "^4.1.1",
+    "chokidar": "^3.4.0",
+    "compression-webpack-plugin": "3.1.0",
+    "copy-webpack-plugin": "5.1.1",
+    "glob": "^7.1.6",
+    "raw-loader": "3.1.0",
+    "terser": "4.6.7",
     "webpack": "4.42.0",
+    "webpack-babel-multi-target-plugin": "2.3.3",
     "webpack-cli": "3.3.11",
     "webpack-dev-server": "3.10.3",
-    "webpack-babel-multi-target-plugin": "2.3.3",
-    "copy-webpack-plugin": "5.1.1",
-    "webpack-merge": "4.2.2",
-    "raw-loader": "3.1.0",
-    "compression-webpack-plugin": "3.1.0",
-    "terser": "4.6.7",
-    "chokidar": "^3.4.0"
+    "webpack-merge": "4.2.2"
   },
   "vaadin": {
     "dependencies": {
@@ -118,6 +120,6 @@
       "webpack-dev-server": "3.10.3",
       "chokidar": "^3.4.0"
     },
-    "hash": "060c94e50483e8a97bbb5f44a42629944e70fe9120ca6c780ac4d98652365c93"
+    "hash": "1309de3cb69f1eace444a7bab5d9a3e6b9947af3e80c8a3e51d02f201479bb9e"
   }
 }
