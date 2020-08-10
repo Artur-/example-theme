@@ -8,10 +8,10 @@ import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.router.Route;
-import com.vaadin.flow.server.DesignSystem;
+import com.vaadin.flow.server.ApplicationTheme;
 
 @Route("")
-@DesignSystem("my-theme")
+@ApplicationTheme("my-theme")
 public class JavaView extends VerticalLayout {
 
     public JavaView() {
