@@ -134,6 +134,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>org.vaadin.artur</groupId>
+            <artifactId>a-vaadin-helper</artifactId>
+            <version>1.2.0</version>
+        </dependency>
+        <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.8.1</version>
