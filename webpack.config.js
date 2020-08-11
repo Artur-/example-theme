@@ -9,7 +9,7 @@ const flowDefaults = require("./webpack.generated.js");
 const camelCase = require("change-case").camelCase;
 const glob = require("glob");
 
-const dir = "src/main/resources/META-INF/resources/theme";
+const dir = "src/main/resources/META-INF/resources";
 const themeFolder = path.resolve(__dirname, dir);
 
 module.exports = merge(flowDefaults, {

@@ -17,4 +17,4 @@ error-screenshots/
 webpack.generated.js
 
 
-src/main/resources/META-INF/resources/theme/my-theme/my-theme.js
+src/main/resources/META-INF/resources/theme/my-theme/acme.js
