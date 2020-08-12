@@ -9,32 +9,62 @@ const flowDefaults = require("./webpack.generated.js");
 const camelCase = require("change-case").camelCase;
 const glob = require("glob");
 
-const dir = "src/main/resources/META-INF/resources";
-const themeFolder = path.resolve(__dirname, dir);
+// TODO This all will be moved to Flow and not be in the project itself
 
+const flowFrontendFolder = path.resolve(__dirname, "target", "flow-frontend");
+const themeJarFolder = path.resolve(flowFrontendFolder, "theme");
+const projectStaticAssetsFolders = [
+  path.resolve(__dirname, "src", "main", "resources", "META-INF", "resources"),
+  path.resolve(__dirname, "src", "main", "resources", "static"),
+];
+const themeProjectFolders = projectStaticAssetsFolders.map((folder) =>
+  path.resolve(folder, "theme")
+);
+const themeComponentsFolder = "components";
+resolveTheme = (a, b, c) => {
+  console.log("resolveTheme: " + a);
+};
 module.exports = merge(flowDefaults, {
   resolve: {
-    alias: {
-      Theme: themeFolder,
-    },
+    modules: [
+      "node_modules",
+      flowFrontendFolder,
+      ...projectStaticAssetsFolders,
+    ],
   },
 });
 
 // Generate theme file(s)
 
-const generateThemeFile = (themeFolder, themeName) => {
+const getThemeProperties = (themeFolder, themeName) => {
+  const themePropertyFile = path.resolve(themeFolder, "theme.json");
+  console.log("themePropertyFile", themePropertyFile);
+  if (!fs.existsSync(themePropertyFile)) {
+    return {};
+  }
+  return JSON.parse(fs.readFileSync(themePropertyFile));
+};
+const generateThemeFile = (themeFolder, themeName, themeProperties) => {
   const globalFiles = glob.sync("*.css", {
     cwd: themeFolder,
     nodir: true,
   });
   const componentsFiles = glob.sync("*.css", {
-    cwd: path.resolve(themeFolder, "components"),
+    cwd: path.resolve(themeFolder, themeComponentsFolder),
     nodir: true,
   });
 
   let themeFile = `
 import { css, unsafeCSS } from "lit-element";
 import { registerStyles } from "@vaadin/vaadin-themable-mixin/register-styles";
+`;
+
+  if (themeProperties.parent) {
+    themeFile += `import 'theme/${themeProperties.parent}/${themeProperties.parent}.js';
+`;
+  }
+
+  themeFile += `
 export const injectGlobalCss = (css) => {
   // FIXME: not all browsers support constructable stylesheets
   const sheet = new CSSStyleSheet();
@@ -54,7 +84,7 @@ injectGlobalCss(${variable});
     const filename = path.basename(componentCss);
     const tag = filename.replace(".css", "");
     const variable = camelCase(filename);
-    themeFile += `import ${variable} from "./components/${filename}";
+    themeFile += `import ${variable} from "./${themeComponentsFolder}/${filename}";
 registerStyles(
   "${tag}",
   css\`
@@ -73,9 +103,22 @@ const handleThemes = (themesFolder) => {
   while ((dirent = dir.readSync())) {
     const themeName = dirent.name;
     const themeFolder = path.resolve(themesFolder, themeName);
-    const themeFile = generateThemeFile(themeFolder, themeName);
+    const themeProperties = getThemeProperties(themeFolder, themeName);
+    const themeFile = generateThemeFile(
+      themeFolder,
+      themeName,
+      themeProperties
+    );
     fs.writeFileSync(path.resolve(themeFolder, themeName + ".js"), themeFile);
   }
 };
 
-handleThemes(themeFolder);
+if (fs.existsSync(themeJarFolder)) {
+  handleThemes(themeJarFolder);
+}
+
+themeProjectFolders.forEach((themeProjectFolder) => {
+  if (fs.existsSync(themeProjectFolder)) {
+    handleThemes(themeProjectFolder);
+  }
+});

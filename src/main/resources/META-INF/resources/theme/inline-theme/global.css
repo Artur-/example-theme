@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  src: url("acme/fonts/Roboto-BlackItalic.ttf") format("TrueType");
+  src: url("theme/inline-theme/fonts/Roboto-BlackItalic.ttf") format("TrueType");
 }
 
 html {

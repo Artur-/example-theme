@@ -11,7 +11,7 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.ApplicationTheme;
 
 @Route("")
-@ApplicationTheme("acme")
+@ApplicationTheme("inline-theme")
 public class JavaView extends VerticalLayout {
 
     public JavaView() {
