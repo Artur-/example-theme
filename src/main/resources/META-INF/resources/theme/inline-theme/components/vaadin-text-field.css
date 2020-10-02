@@ -1,7 +1,27 @@
-[part="input-field"] {
-  border: 1px dashed black;
+:host,
+:host([has-label]) {
+  padding: 0;
 }
 
-:host([class~="fancy"]) [part="input-field"] {
-  border: 3px solid blue;
+[part="input-field"] {
+  border: 1px solid var(--lumo-contrast-30pct);
+  background-color: var(--lumo-base-color);
+  font-weight: 400;
+}
+
+:host([focused]) [part="input-field"] {
+  border-color: var(--lumo-primary-color-50pct);
+  box-shadow: 0 0 0 3px var(--lumo-primary-color-10pct);
+}
+
+[part="input-field"]::after {
+  display: none;
+}
+
+::-moz-selection {
+  background-color: var(--lumo-primary-color-10pct);
+}
+
+::selection {
+  background-color: var(--lumo-primary-color-10pct);
 }

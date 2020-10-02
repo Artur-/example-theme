@@ -1,0 +1,7 @@
+:host {
+  overflow: hidden;
+}
+
+:host([theme~="padding-l"]) {
+  padding: var(--lumo-space-l);
+}

@@ -1,0 +1,8 @@
+:host([focused]) [part="toggle-button"] {
+  color: var(--lumo-primary-color);
+}
+
+[part="toggle-button"]::before {
+  font-family: 'feather-icons';
+  content: var(--feather-icons-calendar);
+}

@@ -1,0 +1,44 @@
+:host([theme~="menu"]) {
+  min-height: var(--lumo-size-xl);
+}
+
+:host([theme~="menu"]) [part="tabs"] {
+  margin: 0;
+}
+
+:host([theme~="menu"]) ::slotted(.menu-title) {
+  font-size: var(--lumo-font-size-xxs) !important;
+  font-weight: 500 !important;
+  margin: var(--lumo-space-xl) var(--lumo-space-m) var(--lumo-space-s) !important;
+  color: var(--lumo-secondary-text-color) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+:host([theme~="menu"]) ::slotted(.menu-title:first-child) {
+  margin-top: var(--lumo-space-l) !important;
+}
+
+:host([theme~="menu"]) ::slotted(vaadin-tab) {
+  font-size: var(--lumo-font-size-s);
+  min-height: var(--lumo-size-s);
+  color: var(--lumo-body-text-color);
+  margin: var(--lumo-space-xs) var(--lumo-space-s);
+  padding: var(--lumo-space-s);
+  border-radius: var(--lumo-border-radius-m);
+}
+
+:host([theme~="menu"]) ::slotted(vaadin-tab[selected]) {
+  color: var(--lumo-primary-text-color);
+  background-color: var(--lumo-primary-color-10pct);
+  --_lumo-tab-marker-display: none;
+}
+
+:host([theme~="menu"]) ::slotted(vaadin-tab[selected]::before),
+:host([theme~="menu"]) ::slotted(vaadin-tab[selected]::after) {
+  display: none;
+}
+
+:host([theme~="menu"]) ::slotted(vaadin-tab:hover) {
+  color: var(--lumo-primary-text-color);
+}

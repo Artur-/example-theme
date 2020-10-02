@@ -1,17 +1,70 @@
-@font-face {
-  font-family: "Roboto";
-  src: url("theme/inline-theme/fonts/Roboto-BlackItalic.ttf") format("TrueType");
+html,
+:host {
+  --lumo-font-family: "Rubik", system-ui, ui-sans-serif, sans-serif;
+  --lumo-line-height-m: 1.5;
+  --lumo-line-height-s: 1.25;
+  --lumo-line-height-xs: 1.125;
+
+  --lumo-shade-5pct: hsla(240, 3%, 80%, 0.2);
+  --lumo-shade-10pct: hsla(240, 3%, 77%, 0.32);
+  --lumo-shade-20pct: hsla(240, 3%, 73%, 0.46);
+  --lumo-shade-30pct: hsla(240, 3%, 69%, 0.61);
+  --lumo-shade-40pct: hsla(240, 4%, 63%, 0.73);
+  --lumo-shade-50pct: hsla(240, 4%, 55%, 0.83);
+  --lumo-shade-60pct: hsla(240, 4%, 46%, 0.9);
+  --lumo-shade-70pct: hsla(240, 4%, 36%, 0.95);
+  --lumo-shade-80pct: hsla(240, 4%, 27%, 0.98);
+  --lumo-shade-90pct: hsla(240, 4%, 18%, 1);
+  --lumo-shade: hsla(240, 4%, 10%, 1);
+
+  --lumo-primary-color: hsla(260, 87%, 53%, 0.91);
+  --lumo-primary-color-50pct: hsla(260, 77%, 64%, 0.65);
+  --lumo-primary-color-10pct: hsla(260, 59%, 70%, 0.15);
+  --lumo-primary-text-color: hsla(260, 89%, 46%, 0.98);
+
+  --lumo-body-text-color: var(--lumo-contrast-80pct);
+  --lumo-secondary-text-color: var(--lumo-contrast-70pct);
+
+  --lumo-border-radius-l: 12px;
+  --lumo-border-radius-m: 6px;
+  --lumo-border-radius-s: 4px;
+  --lumo-border-radius: var(--lumo-border-radius-m);
 }
 
-html {
-  --lumo-font-size: 40px;
+h1,
+h2,
+h3 {
+  letter-spacing: -0.02em;
 }
 
-body {
-  background: lightblue;
-  --lumo-font-family: "Roboto";
+.app-title {
+  font-size: var(--lumo-font-size-m);
+  line-height: var(--lumo-size-xl);
+  margin: 0 var(--lumo-space-m);
+}
 
-  --vaadin-charts-color-0: rgb(255, 255, 0);
-  --vaadin-charts-color-1: rgb(224, 8, 188);
-  --vaadin-charts-color-2: rgb(26, 126, 126);
+.avatar {
+  width: var(--lumo-size-s);
+  height: var(--lumo-size-s);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--lumo-font-size-s);
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--lumo-primary-color);
+  color: var(--lumo-primary-contrast-color);
+}
+
+.avatar:empty {
+  font-size: var(--lumo-font-size-m);
+  font-weight: normal;
+}
+
+.avatar:empty::before {
+  content: var(--feather-icons-user);
+  font-family: feather-icons;
+  font-size: var(--lumo-icon-size-s);
+  line-height: 1;
 }

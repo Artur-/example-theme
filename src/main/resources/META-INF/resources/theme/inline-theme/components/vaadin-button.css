@@ -1,4 +1,24 @@
-:host {
-  background: red;
-  color: white;
+:host(:not(vaadin-drawer-toggle)) {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: var(--lumo-font-size-s);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+:host(:not(vaadin-drawer-toggle):not([theme*="tertiary"]):not([theme~="primary"])) {
+  background-color: transparent;
+  border: 1px solid var(--lumo-contrast-20pct);
+}
+
+:host(:not(vaadin-drawer-toggle):not([theme*="tertiary"])) {
+  transition: box-shadow 200ms;
+}
+
+:host(:not(vaadin-drawer-toggle):not([theme*="tertiary"]):hover) {
+  box-shadow: var(--lumo-box-shadow-s);
+}
+
+:host([theme~="primary"]) {
+  font-weight: 500;
 }
