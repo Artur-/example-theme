@@ -19,9 +19,9 @@
 }
 
 ::-moz-selection {
-  background-color: var(--lumo-primary-color-10pct);
+  background-color: var(--lumo-primary-color-30pct);
 }
 
 ::selection {
-  background-color: var(--lumo-primary-color-10pct);
+  background-color: var(--lumo-primary-color-30pct);
 }

@@ -19,6 +19,7 @@ html,
 
   --lumo-primary-color: hsla(260, 87%, 53%, 0.91);
   --lumo-primary-color-50pct: hsla(260, 77%, 64%, 0.65);
+  --lumo-primary-color-30pct: hsla(260, 68%, 67%, 0.35);
   --lumo-primary-color-10pct: hsla(260, 59%, 70%, 0.15);
   --lumo-primary-text-color: hsla(260, 89%, 46%, 0.98);
 
@@ -29,6 +30,14 @@ html,
   --lumo-border-radius-m: 6px;
   --lumo-border-radius-s: 4px;
   --lumo-border-radius: var(--lumo-border-radius-m);
+}
+
+::-moz-selection {
+  background-color: var(--lumo-primary-color-30pct);
+}
+
+::selection {
+  background-color: var(--lumo-primary-color-30pct);
 }
 
 h1,
