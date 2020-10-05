@@ -4,19 +4,19 @@
   font-family: "Rubik";
   font-style: normal;
   font-weight: 400;
-  src: url("theme/inline-theme/fonts/rubik-v11-latin-ext_latin-400.woff2") format("woff2");
+  src: url("theme/example-theme/fonts/rubik-v11-latin-ext_latin-400.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 500;
-  src: url("theme/inline-theme/fonts/rubik-v11-latin-ext_latin-500.woff2") format("woff2");
+  src: url("theme/example-theme/fonts/rubik-v11-latin-ext_latin-500.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Rubik";
   font-style: normal;
   font-weight: 600;
-  src: url("theme/inline-theme/fonts/rubik-v11-latin-ext_latin-600.woff2") format("woff2");
+  src: url("theme/example-theme/fonts/rubik-v11-latin-ext_latin-600.woff2") format("woff2");
 }
